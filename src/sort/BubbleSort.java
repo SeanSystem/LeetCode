@@ -16,20 +16,26 @@ public class BubbleSort {
      * 稳定
      */
     public static void sort(int[] arr) {
+        //上一次数据交换位置
+        int k = arr.length - 1;
+        int pos;
         for (int i = 0; i < arr.length - 1; i++) {
             int temp = 0;
+            pos = 0;
             boolean isOk = true;
-            for (int j = 0; j < arr.length - 1 - i; j++) {
+            for (int j = 0; j < k; j++) {
                 if (arr[j] > arr[j + 1]) {
                     isOk = false;
                     temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
+                    pos = j;
                 }
             }
             if (isOk) {
                 break;
             }
+            k = pos;
         }
     }
 
