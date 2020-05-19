@@ -83,7 +83,7 @@ public class HeapSort {
      * 调整索引为 index 处的数据，使其符合堆的特性。
      *
      * @param begin 需要堆化处理的数据的索引
-     * @param len 未排序的堆（数组）的长度
+     * @param len   未排序的堆（数组）的长度
      */
     private static void maxHeapif(int[] arr, int begin, int len) {
         // 左子节点索引
@@ -93,7 +93,9 @@ public class HeapSort {
         // 子节点值最大索引，默认左子节点。
         int cMax = li;
         // 左子节点索引超出计算范围，直接返回。
-        if (li > len) return;
+        if (li > len) {
+            return;
+        }
         // 先判断左右子节点，哪个较大。
         if (ri <= len && arr[ri] > arr[li]) {
             cMax = ri;

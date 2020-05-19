@@ -39,11 +39,53 @@ public class BubbleSort {
         }
     }
 
+    /**
+     * 双向冒泡排序
+     */
+    public static void sort2(int[] arr) {
+        int pos;
+        int l = arr.length - 1;
+        int r = 0;
+        for (int i = 0; i < arr.length - 1; i++) {
+            int temp = 0;
+            pos = 0;
+            boolean isOk = true;
+            //正向冒泡
+            for (int j = r; j < l; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    isOk = false;
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    pos = j;
+                }
+            }
+            l = pos;
+            //反向冒泡
+            for (int k = l; k > r; k--) {
+                if (arr[k] < arr[k - 1]) {
+                    isOk = false;
+                    temp = arr[k];
+                    arr[k] = arr[k - 1];
+                    arr[k - 1] = temp;
+                    pos = k;
+                }
+            }
+            r = pos;
+            if (isOk) {
+                break;
+            }
+        }
+    }
+
     public static void main(String[] args) {
-        int[] arr = {1, 3, 2, 5, 7, 6};
-        sort(arr);
+        long start = System.currentTimeMillis();
+        int[] arr = {10,9,8,7,6,5,4,3,2,1};
+        sort2(arr);
         for (int x : arr) {
             System.out.println(x);
         }
+        long end = System.currentTimeMillis();
+        System.out.println("耗时:" + (end - start));
     }
 }
