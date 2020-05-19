@@ -8,6 +8,13 @@ package sort;
  */
 public class HeapSort {
 
+    /**
+     * 时间复杂度(平均) O(nlog2 n)
+     * 时间复杂度(最坏) O(nlog2 n)
+     * 时间复杂度(最好) O(nlog2 n)
+     * 空间复杂度O(1)
+     * 不稳定
+     */
     public static void sort(int[] arr) {
         int len = arr.length;
         //第一个非叶子节点
