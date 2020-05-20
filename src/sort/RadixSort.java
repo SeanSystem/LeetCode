@@ -37,7 +37,7 @@ public class RadixSort {
         int[] bucket = new int[10];
         //桶元素计数
         for (int i = 0; i < arr.length; i++) {
-            bucket[(int) (arr[i] / radix) % 10]++;
+            bucket[(arr[i] / radix) % 10]++;
         }
         //桶元素统计排名
         for (int i = 1; i < bucket.length; i++) {
@@ -46,8 +46,8 @@ public class RadixSort {
         //倒序输出元素
         int[] temp = new int[arr.length];
         for (int i = arr.length - 1; i >= 0; i--) {
-            temp[(int) bucket[(arr[i] / radix) % 10] - 1] = arr[i];
-            bucket[(int) (arr[i] / radix) % 10]--;
+            temp[ bucket[(arr[i] / radix) % 10] - 1] = arr[i];
+            bucket[(arr[i] / radix) % 10]--;
         }
         //将排好序的元素
         for (int i = 0; i < arr.length; i++) {
