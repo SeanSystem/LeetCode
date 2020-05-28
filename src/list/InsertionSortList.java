@@ -1,7 +1,7 @@
 package list;
 
 /**
- * 插入排序堆链表进行排序
+ * 插入排序对链表进行排序
  *
  * @author by Sean
  * @date 2020/5/20 22:19
