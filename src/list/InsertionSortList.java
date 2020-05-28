@@ -15,7 +15,7 @@ public class InsertionSortList {
         //新链表用于存放排好序的元素
         ListNode temp = new ListNode(Integer.MIN_VALUE);
         ListNode cur = head;
-        ListNode pre = temp;
+        ListNode pre;
         while (cur != null){
             ListNode next = cur.next;
             pre = temp;
