@@ -18,7 +18,6 @@ public class EvalueReversePolishNotation {
      * @return
      */
     public static int run(String[] tokens){
-       // byte[] bytes = tokens.getBytes();
         Stack<Integer> stack = new Stack<>();
         for(String s : tokens){
             if(s.compareTo("+") == 0){
