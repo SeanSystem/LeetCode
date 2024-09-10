@@ -19,7 +19,7 @@ public class TreeTraverse {
      * @return 二叉树根节点
      */
     public static TreeNode createBinaryTree(LinkedList<Integer> inputList) {
-        if (inputList == null || inputList.size() == 0) {
+        if (inputList == null || inputList.isEmpty()) {
             return null;
         }
         TreeNode treeNode = null;
@@ -105,11 +105,9 @@ public class TreeTraverse {
                 stack.push(treeNode);
                 treeNode = treeNode.left;
             }
-            if (treeNode == null) {
-                treeNode = stack.pop();
-                System.out.println(treeNode.val);
-                treeNode = treeNode.right;
-            }
+            treeNode = stack.pop();
+            System.out.println(treeNode.val);
+            treeNode = treeNode.right;
         }
     }
 
