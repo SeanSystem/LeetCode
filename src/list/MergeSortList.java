@@ -65,13 +65,13 @@ public class MergeSortList {
 
 
     public static void main(String[] args) {
-        ListNode listNode = new ListNode(3);
-        ListNode listNode2 = new ListNode(2);
-        ListNode listNode3 = new ListNode(4);
+        ListNode listNode = new ListNode(2);
+        ListNode listNode2 = new ListNode(1);
+        // ListNode listNode3 = new ListNode(4);
         listNode.next = listNode2;
-        listNode2.next = listNode3;
+        // listNode2.next = listNode3;
         ListNode listNode1 = merge_sort(listNode);
-        while (listNode1 !=null){
+        while (listNode1 != null) {
             System.out.println(listNode1.value);
             listNode1 = listNode1.next;
         }

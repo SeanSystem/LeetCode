@@ -8,19 +8,19 @@ package list;
  */
 public class InsertionSortList {
 
-    public static ListNode solution(ListNode head){
-        if(head == null){
+    public static ListNode solution(ListNode head) {
+        if (head == null) {
             return null;
         }
         //新链表用于存放排好序的元素
         ListNode temp = new ListNode(Integer.MIN_VALUE);
         ListNode cur = head;
         ListNode pre;
-        while (cur != null){
+        while (cur != null) {
             ListNode next = cur.next;
             pre = temp;
             //找到当前元素插入点
-            while (pre.next != null && pre.next.value < cur.value){
+            while (pre.next != null && pre.next.value < cur.value) {
                 pre = pre.next;
             }
             //元素插入
@@ -38,7 +38,7 @@ public class InsertionSortList {
         listNode.next = listNode2;
         listNode2.next = listNode3;
         ListNode solution = solution(listNode);
-        while (solution !=null){
+        while (solution != null) {
             System.out.println(solution.value);
             solution = solution.next;
         }

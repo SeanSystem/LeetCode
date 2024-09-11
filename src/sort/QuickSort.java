@@ -19,31 +19,31 @@ public class QuickSort {
         if (left < right) {
             int i = left;
             int j = right;
-            int x = arr[left];
+            int k = arr[i];
             while (i < j) {
-                while (i < j && arr[j] >= x) {
+                while (i < j && arr[j] >= k) {
                     j--;
                 }
                 if (i < j) {
-                    arr[i++] = arr[j];
+                    arr[i] = arr[j];
+                    i++;
                 }
-                while (i < j && arr[i] < x) {
+                while (i < j && arr[i] < k) {
                     i++;
                 }
                 if (i < j) {
-                    arr[j--] = arr[i];
+                    arr[j] = arr[i];
+                    j--;
                 }
             }
-            arr[i] = x;
-            //左分区排序
+            arr[i] = k;
             sort(arr, left, i - 1);
-            //右分区排序
             sort(arr, i + 1, right);
         }
     }
 
     public static void main(String[] args) {
-        int[] arr = {1, 2};
+        int[] arr = {9, 6, 3, 2, 5, 7};
         sort(arr, 0, arr.length - 1);
         for (int x : arr) {
             System.out.println(x);

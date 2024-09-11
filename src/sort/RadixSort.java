@@ -46,7 +46,7 @@ public class RadixSort {
         //倒序输出元素
         int[] temp = new int[arr.length];
         for (int i = arr.length - 1; i >= 0; i--) {
-            temp[ bucket[(arr[i] / radix) % 10] - 1] = arr[i];
+            temp[bucket[(arr[i] / radix) % 10] - 1] = arr[i];
             bucket[(arr[i] / radix) % 10]--;
         }
         //将排好序的元素

@@ -78,10 +78,32 @@ public class BubbleSort {
         }
     }
 
+    public static void sort3(int[] arr) {
+        int len = arr.length;
+        int k = arr.length - 1;
+        for (int i = 0; i < len - 1; i++) {
+            int pos = 0;
+            boolean sorted = true;
+            for (int j = 0; j < k; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j + 1];
+                    arr[j + 1] = arr[j];
+                    arr[j] = temp;
+                    sorted = false;
+                    pos = j;
+                }
+            }
+            if (sorted) {
+                break;
+            }
+            k = pos;
+        }
+    }
+
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
-        int[] arr = {10,9,8,7,6,5,4,3,2,1};
-        sort2(arr);
+        int[] arr = {1, 2, 8, 7, 6, 5, 4, 3, 9, 10};
+        sort3(arr);
         for (int x : arr) {
             System.out.println(x);
         }

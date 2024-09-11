@@ -10,12 +10,12 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class SyncDemo {
 
-    public synchronized void test(){
+    public synchronized void test() {
         System.out.println("123");
     }
 
-    public void test2(){
-        synchronized (SyncDemo.class){
+    public void test2() {
+        synchronized (SyncDemo.class) {
             System.out.println("123");
         }
     }

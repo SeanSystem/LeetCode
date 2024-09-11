@@ -8,12 +8,12 @@ package list;
  */
 public class ListNode {
 
-     int value;
+    int value;
 
-     ListNode next;
+    ListNode next;
 
-    public ListNode(int value){
-        this.value =value;
+    public ListNode(int value) {
+        this.value = value;
         this.next = null;
     }
 

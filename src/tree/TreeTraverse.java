@@ -1,5 +1,6 @@
 package tree;
 
+import java.lang.reflect.InvocationHandler;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Stack;
