@@ -1,8 +1,11 @@
 package tree;
 
 import java.lang.reflect.InvocationHandler;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Stack;
 
 /**
@@ -86,10 +89,8 @@ public class TreeTraverse {
                 stack.push(treeNode);
                 treeNode = treeNode.left;
             }
-            if (treeNode == null) {
-                treeNode = stack.pop();
-                treeNode = treeNode.right;
-            }
+            treeNode = stack.pop();
+            treeNode = treeNode.right;
         }
     }
 
@@ -139,6 +140,31 @@ public class TreeTraverse {
             }
         }
 
+    }
+
+    /**
+     * 后序遍历（迭代版）
+     *
+     * @param root 根节点
+     */
+    public List<Integer> postorderTraversal(TreeNode root) {
+        // 迭代法：用栈来做
+        Stack<TreeNode> st = new Stack<>();
+        List<Integer> list = new ArrayList<>();
+        st.push(root);
+        while (!st.isEmpty()) {
+            TreeNode temp = st.pop();
+            // 注意栈中的空节点直接continue
+            if (temp == null) {
+                continue;
+            } else {
+                list.add(temp.val); // 中
+                st.push(temp.left); // 相对于前序遍历，这更改一下入栈顺序 左
+                st.push(temp.right); // 相对于前序遍历，这更改一下入栈顺序 右
+            }
+        }
+        Collections.reverse(list); // 将结果反转之后就是左右中的顺序了
+        return list;
     }
 
     public static void main(String[] args) {
